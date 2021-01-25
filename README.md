@@ -8,4 +8,4 @@
 # pip install pymongo
 
 
-CRUD OPERAIONS IN MONGODB USING PYTHON-FLASK FRAMEWORK
+CRUD Opertion in MongoDB Using Python Flask Framework
