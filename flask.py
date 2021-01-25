@@ -36,8 +36,7 @@ if __name__ == '__main__':
 		if 'test_collections' in client['test'].list_collection_names():
 			app.run()
 		else:
-			print("Create Collection aion........Restart")
-			
+			print("Create Collection aion........Restart")		
 	else:
 		print("Create Database test..........Restart")
 			
