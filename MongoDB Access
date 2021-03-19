@@ -1,0 +1,42 @@
+MongoDB - Docs
+
+	Python 
+
+		1. Connect MongoDB In Python 
+
+			import pymongo
+			client =  pymongo.MongoClient("mongodb://localhost:27017/")
+
+		 2.Create Database 
+
+		 	client['Database Name']
+
+		 3.Create Collection 
+
+		 	client['Collection Name']
+
+
+	Node Js
+
+
+		1.Connect Database 
+
+			var mongoose = require('mongoose');
+
+			mongoose.connect(DatabaseUrl,{useNewUrlParser:true,useUnifiedTopology: true} ).then(()=>{})
+
+		2.Create Collection
+
+			var mongoose = require('mongoose');
+
+			var login = mongoose.Schema({
+			  user:String ,   
+			  psw:Number
+			});
+
+			var login= mongoose.model('login',login);
+			module.exports = login;
+
+
+			Export Scheme and login = new login({data})
+			login.save()
