@@ -3,6 +3,8 @@
 
 # INSTALL PACKEGES
 
+# virtualenv Flask_Mongodb
+
 # pip install flask
 
 # pip install pymongo
