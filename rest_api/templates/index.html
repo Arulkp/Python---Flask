@@ -1,0 +1,64 @@
+<html>
+   <head>
+      <script src="jquery-3.5.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <style>
+         table {
+         font-family: arial, sans-serif;
+         border-collapse: collapse;
+         width: 100%;
+         }
+         td, th {
+         border: 1px solid #dddddd;
+         text-align: left;
+         padding: 8px;
+         }
+         tr:nth-child(even) {
+         background-color: #dddddd;
+         }
+      </style>
+   </head>
+   <body>
+      <form action="/" method="GET">
+         <input type="file" >Data</input>
+
+
+         <!-- #DOnt user button type submit -->
+         
+         <button id ="click_me" type="button">Submit</button>
+      </form>
+      <div id="out_view">
+         <table id="out_table">
+         </table>
+      </div>
+      <script>
+         $("#click_me").click(function(){
+             $.ajax('/start', {
+                         type: 'GET',  // http method
+                         data: { },  // data to submit
+                         success: function (data, status, xhr) {
+                             jQuery.each(data, function(index, value) {
+                                console.log(value)
+                                 var value_split = value;
+                                 var table =$('#out_table');
+                                 for(var i=0;i<value_split.length;i++){
+                                     table.append( $('<tr>'))
+                                     table.append( $('<td />', {text : value_split[i][0]}) );
+                                     table.append( $('<td />', {text : value_split[i][1]}) );
+                                     table.append( $('</tr >'))
+                                 }
+                                 
+                                 $("#out_view").append(table);
+                             });
+                         },
+                         error: function (jqXhr, textStatus, errorMessage) {
+                             console.log(errorMessage)
+                         }
+                     });
+         
+         });
+         
+             
+      </script>
+   </body>
+</html>
